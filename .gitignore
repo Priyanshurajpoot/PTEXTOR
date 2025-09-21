@@ -1,0 +1,40 @@
+# ------------------------
+# Python cache files
+# ------------------------
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# ------------------------
+# PyInstaller artifacts
+# ------------------------
+build/
+dist/
+*.spec
+
+# ------------------------
+# Virtual environment
+# ------------------------
+venv/
+
+# ------------------------
+# Inno Setup output
+# ------------------------
+setup/
+*.exe
+*.iss
+
+# ------------------------
+# Editor/IDE files
+# ------------------------
+*.vscode/
+*.idea/
+*.sublime-project
+*.sublime-workspace
+
+# ------------------------
+# OS generated files
+# ------------------------
+.DS_Store
+Thumbs.db

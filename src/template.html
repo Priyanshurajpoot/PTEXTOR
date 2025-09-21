@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>PTEXTOR Preview</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        padding: 30px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        margin: 0;
+        color: #333;
+    }
+    
+    .content-container {
+        background: rgba(255, 255, 255, 0.95);
+        padding: 40px;
+        border-radius: 15px;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        backdrop-filter: blur(10px);
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    
+    .paragraph {
+        opacity: 0;
+        margin-bottom: 20px;
+        display: block;
+        font-size: 20px;
+        line-height: 1.6;
+        padding: 15px 0;
+        border-left: 4px solid transparent;
+        padding-left: 20px;
+        transition: all 0.3s ease;
+        position: relative;
+    }
+    
+    .paragraph:hover {
+        border-left-color: #667eea;
+        background: rgba(102, 126, 234, 0.05);
+        transform: translateX(5px);
+    }
+    
+    .paragraph span {
+        opacity: 0;
+        display: inline-block;
+        transform: translateY(20px);
+    }
+    
+    /* Effect-specific initial states */
+    .paragraph[data-effect="fade-in"] {
+        opacity: 0;
+    }
+    
+    .paragraph[data-effect="slide-up"] {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    
+    .paragraph[data-effect="bounce"] {
+        opacity: 0;
+        transform: translateY(-30px) scale(0.8);
+    }
+    
+    .paragraph[data-effect="zoom"] {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    
+    .paragraph[data-effect="wave"] {
+        opacity: 1; /* Wave effect handles opacity per character */
+    }
+    
+    /* Loading indicator */
+    .loading {
+        text-align: center;
+        font-style: italic;
+        color: #666;
+        margin: 20px 0;
+    }
+</style>
+</head>
+<body>
+    <div class="content-container">
+        <div class="loading" id="loadingText">Preparing animation...</div>
+        <!--CONTENT-->
+    </div>
+
+<script>
+// Wait for both DOM and anime.js to be ready
+function initializeAnimations() {
+    // Remove loading text
+    const loadingEl = document.getElementById('loadingText');
+    if (loadingEl) {
+        loadingEl.remove();
+    }
+    
+    const paragraphs = document.querySelectorAll('.paragraph');
+    if (paragraphs.length === 0) {
+        console.log('No paragraphs found to animate');
+        return;
+    }
+    
+    console.log(`Found ${paragraphs.length} paragraphs to animate`);
+    
+    let totalDelay = 300; // Initial delay
+    const gap = 800; // Time gap between paragraph animations
+    
+    paragraphs.forEach((p, index) => {
+        const effect = p.dataset.effect || 'fade-in';
+        const duration = parseInt(p.dataset.duration) || 1500;
+        const delay = totalDelay;
+        
+        console.log(`Animating paragraph ${index + 1}: effect=${effect}, duration=${duration}, delay=${delay}`);
+        
+        // Ensure paragraph starts invisible
+        p.style.opacity = '0';
+        
+        if (effect === 'fade-in') {
+            anime({
+                targets: p,
+                opacity: [0, 1],
+                duration: duration,
+                delay: delay,
+                easing: 'easeOutQuad',
+                complete: () => console.log(`Fade-in complete for paragraph ${index + 1}`)
+            });
+            
+        } else if (effect === 'slide-up') {
+            p.style.transform = 'translateY(50px)';
+            anime({
+                targets: p,
+                translateY: [50, 0],
+                opacity: [0, 1],
+                duration: duration,
+                delay: delay,
+                easing: 'easeOutCubic',
+                complete: () => console.log(`Slide-up complete for paragraph ${index + 1}`)
+            });
+            
+        } else if (effect === 'bounce') {
+            p.style.transform = 'translateY(-30px) scale(0.8)';
+            anime({
+                targets: p,
+                translateY: [-30, 0],
+                scale: [0.8, 1],
+                opacity: [0, 1],
+                duration: duration,
+                delay: delay,
+                easing: 'easeOutElastic(1, 0.6)',
+                complete: () => console.log(`Bounce complete for paragraph ${index + 1}`)
+            });
+            
+        } else if (effect === 'zoom') {
+            p.style.transform = 'scale(0.5)';
+            anime({
+                targets: p,
+                scale: [0.5, 1],
+                opacity: [0, 1],
+                duration: duration,
+                delay: delay,
+                easing: 'easeOutBack(1.5)',
+                complete: () => console.log(`Zoom complete for paragraph ${index + 1}`)
+            });
+            
+        } else if (effect === 'wave') {
+            // Wave effect: animate each character
+            const text = p.textContent;
+            p.textContent = '';
+            p.style.opacity = '1'; // Wave handles character opacity
+            
+            // Create spans for each character
+            for (let i = 0; i < text.length; i++) {
+                const span = document.createElement('span');
+                span.textContent = text[i] === ' ' ? '\u00A0' : text[i]; // Non-breaking space
+                span.style.opacity = '0';
+                span.style.display = 'inline-block';
+                span.style.transform = 'translateY(30px)';
+                p.appendChild(span);
+            }
+            
+            // Animate characters with staggered timing
+            anime({
+                targets: p.querySelectorAll('span'),
+                translateY: [30, 0],
+                opacity: [0, 1],
+                delay: anime.stagger(80, {start: delay}),
+                duration: Math.min(duration, 800), // Cap individual character duration
+                easing: 'easeOutSine',
+                complete: () => console.log(`Wave complete for paragraph ${index + 1}`)
+            });
+            
+        } else {
+            // Default fade-in
+            anime({
+                targets: p,
+                opacity: [0, 1],
+                duration: duration,
+                delay: delay,
+                easing: 'easeOutQuad'
+            });
+        }
+        
+        // Calculate delay for next paragraph
+        totalDelay += Math.max(duration * 0.3, 400) + gap;
+    });
+}
+
+// Initialize when everything is loaded
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+        setTimeout(initializeAnimations, 100);
+    });
+} else {
+    setTimeout(initializeAnimations, 100);
+}
+
+// Fallback initialization
+setTimeout(() => {
+    if (document.querySelectorAll('.paragraph[style*="opacity: 1"]').length === 0) {
+        console.log('Fallback: Force initializing animations');
+        initializeAnimations();
+    }
+}, 1000);
+</script>
+</body>
+</html>
