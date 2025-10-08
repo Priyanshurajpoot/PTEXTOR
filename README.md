@@ -1,4 +1,5 @@
-<img width="111" height="111" alt="PTEXTOR" src="https://github.com/user-attachments/assets/527cd015-3f05-4db8-9100-50c2282f5e5c" /># PTEXTOR         
+<img width="111" height="111" alt="PTEXTOR" src="https://github.com/user-attachments/assets/527cd015-3f05-4db8-9100-50c2282f5e5c" />
+         
 
 
 PTEXTOR is a lightweight desktop app for writers and storytellers, designed for creating, editing, and sharing stories using custom formats.  
