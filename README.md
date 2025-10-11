@@ -95,8 +95,8 @@ Beautiful gradient background with animated text appearing sequentially with cho
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/ptextor.git
-cd ptextor
+git clone https://github.com/priyanshurajpoot/PTEXTOR.git
+cd PTEXTOR
 
 # Install dependencies
 pip install -r requirements.txt
@@ -600,7 +600,7 @@ We welcome contributions! Here's how you can help:
 
 MIT License
 
-Copyright (c) 2024 PTEXTOR Development Team
+Copyright (c) 2024 PTEXTOR 
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -627,7 +627,7 @@ SOFTWARE.
 - **PyQt5** - Cross-platform GUI framework
 - **Anime.js** - Lightweight animation library
 - **ReportLab** - PDF generation toolkit
-- **Contributors** - All developers and users who helped improve PTEXTOR
+
 
 ---
 
@@ -635,7 +635,7 @@ SOFTWARE.
 
 - **GitHub Issues**: [Report bugs or request features](https://github.com/Priyanshurajpoot/PTEXTOR/issues)
 - **Documentation**: [Full documentation](https://github.com/Priyanshurajpoot/PTEXTOR)
-- **Email**: priyanshux5xraj@gmail.cpm
+- **Email**: priyanshux5xraj@gmail.com
 ---
 
 ## Roadmap
@@ -652,12 +652,12 @@ SOFTWARE.
 - [ ] Web-based editor
 
 ### Version History
-- **v1.0.0** - Initial release with core features
-- **v0.9.0** - Beta release with file associations
-- **v0.5.0** - Alpha release with basic editor
+- **v1.0.0** - Initial release with core features , currently released and available.
+
 
 ---
 
-**Made with ❤️ for writers and storytellers everywhere**
+AUTRHOR 
+- PRIYANSHU RAJPOOT
 
 *Transform your words into captivating visual experiences with PTEXTOR*
