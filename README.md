@@ -17,7 +17,7 @@
 **Priyanshu Rajpoot**  
 *MCA Post Graduate | Python Developer | Prompt Engineer | AI Enthusiast*
 
-- 🔗 **LinkedIn**: [priyanshux5](https://linkedin.com/in/priyanshux5)
+- 🔗 **LinkedIn**: [priyanshux5](https://linkedin.com/in/priyanshu-rajpoot-199503256)
 - 💻 **GitHub**: [Priyanshurajpoot](https://github.com/Priyanshurajpoot)
 - 📧 **Email**: priyanshux5xraj@gmail.com
 
@@ -425,7 +425,7 @@ SOFTWARE.
 - **🐛 Report Issues**: [GitHub Issues](https://github.com/Priyanshurajpoot/PTEXTOR/issues)
 - **🚀 Downloads**: [GitHub Releases](https://github.com/Priyanshurajpoot/PTEXTOR/releases)
 - **📧 Email**: priyanshux5xraj@gmail.com
-- **👨‍💻 Developer**: [Priyanshu Rajpoot](https://linkedin.com/in/priyanshux5)
+- **👨‍💻 Developer**: [Priyanshu Rajpoot](https://linkedin.com/in/priyanshu-rajpoot-199503256)
 
 ---
 
@@ -449,15 +449,14 @@ Special thanks to:
 - **📂 Repository**: [PTEXTOR on GitHub](https://github.com/Priyanshurajpoot/PTEXTOR.git)
 - **🚀 Releases**: [Latest Releases](https://github.com/Priyanshurajpoot/PTEXTOR/releases)
 - **🐛 Issues**: [Report Issues](https://github.com/Priyanshurajpoot/PTEXTOR/issues)
-- **👨‍💻 Developer**: [Priyanshu Rajpoot](https://linkedin.com/in/priyanshux5)
+- **👨‍💻 Developer**: [Priyanshu Rajpoot](https://linkedin.com/in/priyanshu-rajpoot-199503256)
 
 ---
-
+## AUTHOR
+**Priyanshu Rajpoot**  
 **Python Developer | Prompt Engineer | AI Enthusiast**  
 *Transforming words into captivating visual experiences*
 
 ---
 
-## AUTHOR
-**Priyanshu Rajpoot**  
-*MCA Post Graduate | Python Developer | Creative Software Engineer*
+
